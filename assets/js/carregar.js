@@ -2,6 +2,7 @@ window.addEventListener("load", atualizar)
 
 
 function atualizar(){
+    document.querySelector("#lista-tarefas").innerHTML = ""
     let cadastros = JSON.parse(localStorage.getItem("cadastros")) || []
   cadastros.forEach(cadastro => criarCard(cadastro))
 }
@@ -11,7 +12,7 @@ function criarCard(cadastro) {
   card.classList.add("col", "s12", "m6", "l3")
 
   card.innerHTML = `
-                <div class="card">
+                <div class="card ${cadastro.concluida ? 'grey': ''}">
                     <div class="card-content">
                         <span class="card-title">${cadastro.nome}</span>
                         <p>${cadastro.descricao}</p>
@@ -23,7 +24,7 @@ function criarCard(cadastro) {
                         <a href="#" class="btn red" onClick="apagar(${cadastro.id})">
                             <i class="material-icons">delete</i>
                         </a>
-                        <a href="#" class="btn green">
+                        <a href="#" class="btn green" onClick="concluir(${cadastro.id})">
                             <i class="material-icons">check</i>
                         </a>
                     </div>

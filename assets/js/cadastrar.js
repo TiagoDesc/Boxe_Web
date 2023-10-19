@@ -6,7 +6,8 @@ document.querySelector("#botao-cadastrar").addEventListener("click", () => {
     id: Date.now(),
     nome: document.querySelector("#nome").value,
     descricao: document.querySelector("#descricao").value,
-    pontos: document.querySelector("#pontos").value
+    pontos: document.querySelector("#pontos").value,
+    concluida: false
   }
 
   cadastros.push(cadastro)
