@@ -1,7 +1,10 @@
-window.addEventListener("load", () => {
-  let cadastros = JSON.parse(localStorage.getItem("cadastros")) || []
+window.addEventListener("load", atualizar)
+
+
+function atualizar(){
+    let cadastros = JSON.parse(localStorage.getItem("cadastros")) || []
   cadastros.forEach(cadastro => criarCard(cadastro))
-})
+}
 
 function criarCard(cadastro) {
   const card = document.createElement("div")
