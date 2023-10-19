@@ -5,6 +5,7 @@ window.addEventListener("load", () => {
 
 function criarCard(cadastro) {
   const card = document.createElement("div")
+  card.classList.add("col", "s12", "m6", "l3")
 
   card.innerHTML = `
                 <div class="card">
@@ -16,7 +17,7 @@ function criarCard(cadastro) {
                         <span data-badge-caption="pontos" class="badge blue white-text">4</span>
                     </div>
                     <div class="card-action">
-                        <a href="#" class="btn red">
+                        <a href="#" class="btn red" onClick="apagar(${cadastro.id})">
                             <i class="material-icons">delete</i>
                         </a>
                         <a href="#" class="btn green">
