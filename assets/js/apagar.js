@@ -6,4 +6,5 @@ function apagar(id){
     const cadastros_filtrados = cadastros.filter(cadastro => cadastro.id !== id)
     localStorage.setItem("cadastros", JSON.stringify(cadastros_filtrados))
     atualizar()
+    calcularEstatisticas()
 }

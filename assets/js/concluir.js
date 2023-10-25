@@ -8,4 +8,5 @@ function concluir(id){
     // Salvar no localStorage
     localStorage.setItem("cadastros", JSON.stringify(cadastros))
     atualizar()
+    calcularEstatisticas()
 }
